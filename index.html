@@ -19,27 +19,28 @@
         </nav>
     </header>
 
-    <section id="home">
+    <section id="home" class="tab-content">
         <h2>Welcome to Our SEO Business</h2>
         <p>We specialize in improving your online visibility and search engine rankings.</p>
     </section>
 
-    <section id="services">
+    <section id="services" class="tab-content">
         <h2>Our Services</h2>
+        <p>We offer a range of services to help your business succeed in the digital world:</p>
         <ul>
-            <li>Keyword Research</li>
-            <li>On-Page Optimization</li>
-            <li>Link Building</li>
-            <li>Content Marketing</li>
+            <li><strong>Keyword Research:</strong> We identify the most relevant keywords for your industry.</li>
+            <li><strong>On-Page Optimization:</strong> We optimize your website's content and structure for search engines.</li>
+            <li><strong>Link Building:</strong> We build high-quality backlinks to boost your site's authority.</li>
+            <li><strong>Content Marketing:</strong> We create engaging content that attracts and retains your audience.</li>
         </ul>
     </section>
 
-    <section id="about">
+    <section id="about" class="tab-content">
         <h2>About Us</h2>
-        <p>We are a team of experienced SEO professionals dedicated to helping businesses succeed online.</p>
+        <p>We are a dedicated team of experienced SEO professionals who are passionate about helping businesses succeed online. With years of expertise, we have a proven track record of delivering results for our clients.</p>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="tab-content">
         <h2>Contact Us</h2>
         <p>If you have any questions or inquiries, please feel free to contact us.</p>
         <p>Email: info@yourseobusiness.com</p>
@@ -48,5 +49,26 @@
     <footer>
         <p>&copy; 2023 Your SEO Business</p>
     </footer>
+
+    <script>
+        // JavaScript to toggle tab content visibility
+        const tabs = document.querySelectorAll('nav ul li a');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').slice(1);
+                const tabContents = document.querySelectorAll('.tab-content');
+                tabContents.forEach(content => {
+                    content.style.display = 'none';
+                });
+                document.getElementById(targetId).style.display = 'block';
+            });
+        });
+
+        // Initially hide tab content except for the Home tab
+        document.querySelectorAll('.tab-content:not(#home)').forEach(content => {
+            content.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
